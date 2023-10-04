@@ -71,7 +71,6 @@ def pdb_to_graph(pdb_file):
 
     return data
 
-
 # binding affinity 데이터 불러오기
 affinity_df = pd.read_csv("./INDEX_refined_data.2020", sep="\s+", header=None, names=["PDB", "resolution", "release_year", "Affinity"])
 
@@ -81,9 +80,8 @@ affinity_dict = pd.Series(affinity_df.Affinity.values, index=affinity_df.PDB).to
 # 데이터셋의 경로
 dataset_path = "./refined-set"
 
-# 모든 ligand 및 protein_pocket 데이터를 저장할 리스트
-ligands = []
-proteins = []
+len_ligand = 0
+len_protein = 0
 
 # 모든 ligand .mol2 및 protein_pocket .pdb 파일에 대해
 for root, dirs, files in os.walk(dataset_path):
@@ -104,9 +102,11 @@ for root, dirs, files in os.walk(dataset_path):
             ligand_data.affinity = affinity_dict.get(pdb_code, "None")
             protein_data.affinity = affinity_dict.get(pdb_code, "None")
 
-            # 리스트에 추가
-            ligands.append(ligand_data)
-            proteins.append(protein_data)
+            # .pkl 파일로 저장
+            with open(f"{root}/{pdb_code}_ligand.pkl", 'wb') as f:
+                pickle.dump(ligand_data, f)
+            with open(f"{root}/{pdb_code}_protein.pkl", 'wb') as f:
+                pickle.dump(protein_data, f)
 
         except ValueError as e:
             print(f"Failed to process files {mol2_file} and {pdb_file}: {e}")

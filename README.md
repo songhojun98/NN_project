@@ -24,9 +24,14 @@ wget http://www.pdbbind.org.cn/download/CASF-2016.tar.gz
 ````
 CASF-2016 dataset: 
 > The latest available version of the PDBbind core set is included in CASF-2016, which consists of 285 protein-ligand complexes
-
     
 ### Notes:
 
 > Protein PDB files are assumed to contain coordinates for all heavy atoms
     
+## Presentation Video
+> https://drive.google.com/file/d/1fqrfNMa_-avkyksGpn99XE1gID2vTAfm/view?usp=drive_link
+
+## Contect information
+> Phone number: 010-7529-0763
+> Email: h_j_song@korea.ac.kr

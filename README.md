@@ -34,8 +34,3 @@ CASF-2016 dataset:
 https://drive.google.com/file/d/1fqrfNMa_-avkyksGpn99XE1gID2vTAfm/view?usp=drive_link
 ````
 
-## Contect information
-````
-Phone number: 010-7529-0763
-Email: h_j_song@korea.ac.kr
-````
